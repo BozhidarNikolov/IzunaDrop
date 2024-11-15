@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IzunaDrop.ViewModels\IzunaDrop.ViewModels.csproj" />
+  </ItemGroup>
+
 </Project>
