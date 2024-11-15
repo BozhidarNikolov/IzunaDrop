@@ -1,4 +1,13 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using IzunaDrop.Data;
+using IzunaDrop.Areas.Identity.Data;
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("IzunaDropDbContextConnection") ?? throw new InvalidOperationException("Connection string 'IzunaDropDbContextConnection' not found.");
+
+builder.Services.AddDbContext<IzunaDropDbContext>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddDefaultIdentity<IzunaDropUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<IzunaDropDbContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
