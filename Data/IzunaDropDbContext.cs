@@ -7,6 +7,7 @@ namespace IzunaDrop.Data;
 
 public class IzunaDropDbContext : IdentityDbContext<IzunaDropUser>
 {
+    public DbSet<Game> Games { get; set; }
     public IzunaDropDbContext(DbContextOptions<IzunaDropDbContext> options)
         : base(options)
     {
