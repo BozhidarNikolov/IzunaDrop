@@ -17,8 +17,8 @@ namespace IzunaDrop.Data.Models
         public string Name { get; set; } = string.Empty; //gurantee will never be null
 
         [Required]
-        [MaxLength(GameConstants.DescriptionMaxLength)]
-        [MinLength(GameConstants.DescriptionMinLength)]
+        [MaxLength(GameConstants.GameDescriptionMaxLength)]
+        [MinLength(GameConstants.GameDescriptionMinLength)]
         public string Description { get; set; } = string.Empty;
 
         [Required]

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using IzunaDrop.Constants;
 
 namespace IzunaDrop.Data.Models
 {
@@ -9,8 +10,13 @@ namespace IzunaDrop.Data.Models
         public int Id { get; set; }
 
 
-        public string Name { get; set; }
-
-        public int MyProperty { get; set; }
+        [Required]
+        [MinLength(EnemyConstants.EnemyNameMinLength)]
+        [MaxLength(EnemyConstants.EnemyNameMaxLength)]
+        public string Name { get; set; } = string.Empty;
+        [Required]
+        [MinLength(EnemyConstants.EnemyDescriptionMinLength)]
+        [MaxLength(EnemyConstants.EnemyDescriptionMaxLength)]
+        public string Description { get; set; } = string.Empty;
     }
 }
