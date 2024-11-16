@@ -18,5 +18,7 @@ namespace IzunaDrop.Data.Models
         [MinLength(EnemyConstants.EnemyDescriptionMinLength)]
         [MaxLength(EnemyConstants.EnemyDescriptionMaxLength)]
         public string Description { get; set; } = string.Empty;
+
+        public string? ImagePath { get; set; }
     }
 }
