@@ -12,12 +12,12 @@ namespace IzunaDrop.Data.Models
 
 
         [Required]
-        [MinLength(EnemyConstants.EnemyNameMinLength)]
-        [MaxLength(EnemyConstants.EnemyNameMaxLength)]
+        [MinLength(EnemyConstants.NameMinLength)]
+        [MaxLength(EnemyConstants.NameMaxLength)]
         public string Name { get; set; } = string.Empty;
         [Required]
-        [MinLength(EnemyConstants.EnemyDescriptionMinLength)]
-        [MaxLength(EnemyConstants.EnemyDescriptionMaxLength)]
+        [MinLength(EnemyConstants.DescriptionMinLength)]
+        [MaxLength(EnemyConstants.DescriptionMaxLength)]
         public string Description { get; set; } = string.Empty;
 
         

@@ -12,13 +12,13 @@ namespace IzunaDrop.Data.Models
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(GameConstants.GameNameMaxLength)]
-        [MinLength(GameConstants.GameNameMinLength)]
+        [MaxLength(GameConstants.NameMaxLength)]
+        [MinLength(GameConstants.NameMinLength)]
         public string Name { get; set; } = string.Empty; //gurantee will never be null
 
         [Required]
-        [MaxLength(GameConstants.GameDescriptionMaxLength)]
-        [MinLength(GameConstants.GameDescriptionMinLength)]
+        [MaxLength(GameConstants.DescriptionMaxLength)]
+        [MinLength(GameConstants.DescriptionMinLength)]
         public string Description { get; set; } = string.Empty;
 
         [Required]
