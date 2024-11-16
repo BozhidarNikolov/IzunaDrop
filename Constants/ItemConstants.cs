@@ -1,6 +1,6 @@
 ﻿namespace IzunaDrop.Constants
 {
-    public class ItemConstants
+    public class ItemConstants:BaseModelConstant
     {
     }
 }
