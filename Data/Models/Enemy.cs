@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using IzunaDrop.Constants;
 
 namespace IzunaDrop.Data.Models
@@ -19,6 +20,11 @@ namespace IzunaDrop.Data.Models
         [MaxLength(EnemyConstants.EnemyDescriptionMaxLength)]
         public string Description { get; set; } = string.Empty;
 
+        
         public string? ImagePath { get; set; }
+
+        [ForeignKey(nameof(GameId))]
+        public int GameId { get; set; }
+        public Game Game { get; set; } = null!;
     }
 }
