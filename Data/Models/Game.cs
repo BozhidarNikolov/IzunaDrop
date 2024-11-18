@@ -35,8 +35,7 @@ namespace IzunaDrop.Data.Models
 
         public ICollection<Item> Items { get; set; } = new List<Item>();
 
-
-
+        public ICollection<Character> Characters { get; set; } = new List<Character>();
 
     }
 }
