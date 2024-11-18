@@ -33,6 +33,8 @@ namespace IzunaDrop.Data.Models
 
         public ICollection<Enemy> Enemies { get; set; } = new List<Enemy>();
 
+        public ICollection<Item> Items { get; set; } = new List<Item>();
+
 
 
 
