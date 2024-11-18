@@ -9,6 +9,8 @@ public class IzunaDropDbContext : IdentityDbContext<IzunaDropUser>
 {
     public DbSet<Game> Games { get; set; }
     public DbSet<Enemy> Enemies { get; set; }
+
+    public DbSet<Item> Items { get; set; }
     public IzunaDropDbContext(DbContextOptions<IzunaDropDbContext> options)
         : base(options)
     {
