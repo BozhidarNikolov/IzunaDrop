@@ -21,4 +21,8 @@
     <ProjectReference Include="..\IzunaDrop.ViewModels\IzunaDrop.ViewModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\Seeders\" />
+  </ItemGroup>
+
 </Project>

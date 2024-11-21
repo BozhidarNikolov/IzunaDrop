@@ -7,7 +7,8 @@ var connectionString = builder.Configuration.GetConnectionString("IzunaDropDbCon
 
 builder.Services.AddDbContext<IzunaDropDbContext>(options => options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<IzunaDropUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<IzunaDropDbContext>();
+builder.Services.AddDefaultIdentity<IzunaDropUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<IzunaDropDbContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
