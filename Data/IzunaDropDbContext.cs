@@ -19,8 +19,16 @@ public class IzunaDropDbContext : IdentityDbContext<IzunaDropUser>
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
-        // Customize the ASP.NET Identity model and override the defaults if needed.
-        // For example, you can rename the ASP.NET Identity table names and more.
-        // Add your customizations after calling base.OnModelCreating(builder);
+
+        builder.Entity<Game>()
+            .HasData(
+            new Game
+            {
+                Id = 1,
+                Name = "TestGame:The testing",
+                Description = "An action-packed adventure game.",
+                ReleaseDate = new DateTime(2006, 2, 23)
+            }
+            );
     }
 }
