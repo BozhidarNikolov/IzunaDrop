@@ -27,7 +27,8 @@ public class IzunaDropDbContext : IdentityDbContext<IzunaDropUser>
                 Id = 1,
                 Name = "TestGame:The testing",
                 Description = "An action-packed adventure game.",
-                ReleaseDate = new DateTime(2006, 2, 23)
+                ReleaseDate = new DateTime(2006, 2, 23),
+                ImagePath= "/images/bigstock-test-icon-63758263-4108836978.jpg"
             }
             );
     }
