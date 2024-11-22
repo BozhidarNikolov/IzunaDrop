@@ -2,18 +2,39 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using IzunaDrop.Data;
 using IzunaDrop.Data.Models;
+using IzunaDrop.Data.Seeders;
 var builder = WebApplication.CreateBuilder(args);
+
 var connectionString = builder.Configuration.GetConnectionString("IzunaDropDbContextConnection") ?? throw new InvalidOperationException("Connection string 'IzunaDropDbContextConnection' not found.");
 
 builder.Services.AddDbContext<IzunaDropDbContext>(options => options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<IzunaDropUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<IzunaDropDbContext>();
+builder.Services.AddIdentity<IzunaDropUser,IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<IzunaDropDbContext>()
+    .AddDefaultTokenProviders();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+
+
+/*using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var configuration = services.GetRequiredService<IConfiguration>();
+    try
+    {
+        await IdentitySeeder.SeedRolesAndAdminAsync(services, configuration);
+
+    }
+    catch (Exception ex)
+    {
+        
+        throw;
+    }
+}*/
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
