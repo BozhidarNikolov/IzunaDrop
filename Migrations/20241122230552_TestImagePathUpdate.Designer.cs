@@ -4,6 +4,7 @@ using IzunaDrop.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IzunaDrop.Migrations
 {
     [DbContext(typeof(IzunaDropDbContext))]
-    partial class IzunaDropDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241122230552_TestImagePathUpdate")]
+    partial class TestImagePathUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -131,7 +134,7 @@ namespace IzunaDrop.Migrations
                             Description = "An action-packed adventure game.",
                             Developer = "",
                             Genre = 0,
-                            ImagePath = "/images/bigstock-test-icon-63758263-4108836978.jpg",
+                            ImagePath = "C:\\Programming\\IzunaDrop\\IzunaDrop\\wwwroot\\bigstock-test-icon-63758263-4108836978.jpg",
                             Name = "TestGame:The testing",
                             Publisher = "",
                             ReleaseDate = new DateTime(2006, 2, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)
