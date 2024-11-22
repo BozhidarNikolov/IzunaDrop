@@ -9,5 +9,6 @@ namespace IzunaDrop.Data.Models;
 // Add profile data for application users by adding properties to the IzunaDropUser class
 public class IzunaDropUser : IdentityUser
 {
+    
 }
 
