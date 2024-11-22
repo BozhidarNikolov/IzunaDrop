@@ -1,6 +1,7 @@
 using IzunaDrop.Data;
 using IzunaDrop.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace IzunaDrop.Controllers
@@ -17,10 +18,10 @@ namespace IzunaDrop.Controllers
         }
        
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            
-            return View();
+            var games = await _context.Games.ToListAsync();
+            return View(games);
         }
 
         public IActionResult Privacy()
