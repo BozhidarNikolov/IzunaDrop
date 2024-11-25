@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using IzunaDrop.Data;
 using IzunaDrop.Data.Models;
 using IzunaDrop.Data.Seeders;
+using IzunaDrop.Services.Interface;
+using IzunaDrop.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("IzunaDropDbContextConnection") ?? throw new InvalidOperationException("Connection string 'IzunaDropDbContextConnection' not found.");
@@ -15,6 +17,9 @@ builder.Services.AddIdentity<IzunaDropUser,IdentityRole>(options => options.Sign
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IGameService, GameService>();
+
+
 
 var app = builder.Build();
 
