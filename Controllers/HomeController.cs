@@ -13,7 +13,7 @@ namespace IzunaDrop.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IGameService _gameService;
 
-        public HomeController(GameService gameService,ILogger<HomeController> logger)
+        public HomeController(IGameService gameService,ILogger<HomeController> logger)
         {
             _gameService = gameService;
             _logger = logger;
