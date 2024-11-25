@@ -12,10 +12,11 @@
                 <div class="card-mb-4 shadow-sm">
                     <a asp-controller="Games" asp-action="Details" asp-route-id="@game.Id">
                         <img class="card-img-top" src="@game.ImagePath" alt="@game.Name"/>
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title">@game.Name</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">@game.Name</h5>
                         </div>
+                    </a>
+                    
                 </div>
             </div>
         }
