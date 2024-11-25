@@ -1,5 +1,7 @@
 using IzunaDrop.Data;
 using IzunaDrop.Models;
+using IzunaDrop.Services;
+using IzunaDrop.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
@@ -9,18 +11,18 @@ namespace IzunaDrop.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IzunaDropDbContext _context;
+        private readonly IGameService _gameService;
 
-        public HomeController(IzunaDropDbContext context,ILogger<HomeController> logger)
+        public HomeController(GameService gameService,ILogger<HomeController> logger)
         {
-            _context = context;
+            _gameService = gameService;
             _logger = logger;
         }
        
 
         public async Task<IActionResult> Index()
         {
-            var games = await _context.Games.ToListAsync();
+            var games = await _gameService.GetAllGamesAsync();
             return View(games);
         }
 
