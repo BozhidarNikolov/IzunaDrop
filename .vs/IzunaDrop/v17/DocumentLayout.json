@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{83505579-717A-41CA-B473-B48E8453330D}|IzunaDrop.Tests\\IzunaDrop.Tests.csproj|c:\\programming\\izunadrop\\izunadrop.tests\\gameservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83505579-717A-41CA-B473-B48E8453330D}|IzunaDrop.Tests\\IzunaDrop.Tests.csproj|solutionrelative:izunadrop.tests\\gameservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8390EB89-13C9-4954-ACA9-E56429BD7E78}|IzunaDrop\\IzunaDrop.csproj|c:\\programming\\izunadrop\\izunadrop\\data\\models\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8390EB89-13C9-4954-ACA9-E56429BD7E78}|IzunaDrop\\IzunaDrop.csproj|solutionrelative:izunadrop\\data\\models\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8390EB89-13C9-4954-ACA9-E56429BD7E78}|IzunaDrop\\IzunaDrop.csproj|c:\\programming\\izunadrop\\izunadrop\\services\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8390EB89-13C9-4954-ACA9-E56429BD7E78}|IzunaDrop\\IzunaDrop.csproj|solutionrelative:izunadrop\\services\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +22,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Programming\\IzunaDrop\\IzunaDrop\\Data\\Models\\Game.cs",
+              "RelativeDocumentMoniker": "IzunaDrop\\Data\\Models\\Game.cs",
+              "ToolTip": "C:\\Programming\\IzunaDrop\\IzunaDrop\\Data\\Models\\Game.cs",
+              "RelativeToolTip": "IzunaDrop\\Data\\Models\\Game.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T22:21:13.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameService.cs",
+              "DocumentMoniker": "C:\\Programming\\IzunaDrop\\IzunaDrop\\Services\\GameService.cs",
+              "RelativeDocumentMoniker": "IzunaDrop\\Services\\GameService.cs",
+              "ToolTip": "C:\\Programming\\IzunaDrop\\IzunaDrop\\Services\\GameService.cs",
+              "RelativeToolTip": "IzunaDrop\\Services\\GameService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T22:18:00.294Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +58,7 @@
               "RelativeDocumentMoniker": "IzunaDrop.Tests\\GameServiceTests.cs",
               "ToolTip": "C:\\Programming\\IzunaDrop\\IzunaDrop.Tests\\GameServiceTests.cs",
               "RelativeToolTip": "IzunaDrop.Tests\\GameServiceTests.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-26T21:51:00.078Z",
               "EditorCaption": ""
