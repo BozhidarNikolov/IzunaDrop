@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IzunaDrop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d22ea19c34861342e9f472a90cd1855794f60e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7776f1448860d7fc8251989e2dd5d22d42f3eab8")]
 [assembly: System.Reflection.AssemblyProductAttribute("IzunaDrop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IzunaDrop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

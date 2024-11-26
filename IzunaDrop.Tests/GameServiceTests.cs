@@ -1,6 +1,6 @@
 namespace IzunaDrop.Tests
 {
-    public class UnitTest1
+    public class GameServiceTests
     {
         [Fact]
         public void Test1()
