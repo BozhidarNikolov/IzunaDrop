@@ -1,2 +1,77 @@
+# Visual Studio
+.vs/
 
-/.vs/IzunaDrop/v17
+# Build Folders
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio Files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.opendb
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Rider
+.idea/
+*.sln.iml
+
+# NuGet Packages
+*.nupkg
+packages/
+
+# Microsoft Azure Build Output
+csx/
+*.build.csdef
+
+# Yarn
+.yarn/
+.yarnrc.yml
+
+# Others
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+.DS_Store
+
+# Entity Framework Core Migrations
+Migrations/
+
+# Test Results
+TestResults/
+
+# Publish Outputs
+publish/
+*.Publish.xml
+
+# Visual Studio Code
+.vscode/
+
+# Local History
+.localhistory/
+
+# NCrunch
+_NCrunch_*
+
+# StyleCop
+StyleCopReport.xml
+
+# Files built by your app or generated at runtime
+appsettings.Development.json
+appsettings.Local.json
+filecontextindex*
+
+# Temporary Files
+~$*
+*.tmp
+*.bak
+
+# OS Generated Files
+Thumbs.db
+ehthumbs.db
