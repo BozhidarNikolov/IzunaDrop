@@ -1,5 +1,14 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model IzunaDrop.Data.Models.Game
+@section Styles {
+    <style>
+        .cover-image {
+            width: 374px;
+            height: 448px;
+            object-fit: cover;
+        }
+    </style>
 }
+
+<div class="text-center">
+    <img class=cover-image img-fluid" src="@Model.ImagePath" alt="@Model.Name" />
+</div>
