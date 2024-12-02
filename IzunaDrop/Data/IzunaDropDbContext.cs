@@ -31,5 +31,16 @@ public class IzunaDropDbContext : IdentityDbContext<IzunaDropUser>
                 ImagePath= "/images/bigstock-test-icon-63758263-4108836978.jpg"
             }
             );
+        builder.Entity<Game>()
+            .HasData(
+            new Game
+            {
+                Id = 2,
+                Name = "NG3Test",
+                Description = "Ninja Gaiden 3 balalalalaalalala",
+                ReleaseDate = new DateTime(2012, 12, 12),
+                ImagePath = "/images/2115068-box_ng3.jpg"
+            }
+            );
     }
 }
