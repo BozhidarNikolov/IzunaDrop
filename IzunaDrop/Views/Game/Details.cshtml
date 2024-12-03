@@ -2,14 +2,35 @@
 @section Styles {
     <style>
         .cover-image {
-            width: 374px;
+            width: 100%;
+            max-width: 374px;
             height: 448px;
             object-fit: cover;
         }
+
+        .game-description {
+            width: 100%;
+            max-width: 374px;
+            height: 448px;
+            overflow: auto;
+            padding: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
     </style>
 }
-
-<div class="text-center">
-    <img class="cover-image img-fluid" src="@Model.ImagePath" alt="@Model.Name" />
-
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 text-center">
+            <img class="cover-image img-fluid" src="@Model.ImagePath" alt="@Model.Name" />
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <div class="game-description">
+                <h2> @Model.Name</h2>
+                <p>@Model.Description</p>
+            </div>
+        </div>
+    </div>
 </div>
