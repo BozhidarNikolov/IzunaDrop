@@ -7,7 +7,7 @@
             height: 448px;
             object-fit: cover;
         }
-        .game-description, .navigation-box {
+        .box {
             width: 100%;
             max-width: 374px;
             height: 448px;
@@ -24,15 +24,18 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-4">
-            <div class="navigation-box">
+            <div class="box">
                 
             </div>
         </div>
         <div class="col-sm-12 col-md-4 text-center">
             <img class="cover-image img-fluid" src="@Model.ImagePath" alt="@Model.Name" />
+            <div class="box">
+                <p>Release Date: @Model.ReleaseDate</p>
+            </div>
         </div>
         <div class="col-sm-12 col-md-4">
-            <div class="game-description">
+            <div class="box">
                 <h2> @Model.Name</h2>
                 <p>@Model.Description</p>
             </div>
