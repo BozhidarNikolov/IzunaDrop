@@ -1,6 +1,7 @@
 ﻿using IzunaDrop.Data;
 using IzunaDrop.Data.Models;
 using IzunaDrop.Services.Interface;
+using Microsoft.EntityFrameworkCore;
 
 namespace IzunaDrop.Services
 {
@@ -14,7 +15,9 @@ namespace IzunaDrop.Services
 
         public async Task<IEnumerable<Enemy>> GetAllEnemiesAsync(int gameId)
         {
-
+            return await _context.Enemies
+                .Where(e => e.GameId == gameId)
+                .ToListAsync();
         }
     }
 }
