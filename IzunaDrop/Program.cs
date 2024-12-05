@@ -18,6 +18,7 @@ builder.Services.AddIdentity<IzunaDropUser,IdentityRole>(options => options.Sign
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IGameService, GameService>();
+builder.Services.AddScoped<IEnemyService, EnemyService>();
 
 
 
