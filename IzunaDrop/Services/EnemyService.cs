@@ -20,9 +20,12 @@ namespace IzunaDrop.Services
                 .ToListAsync();
         }
 
-        public Task<Enemy> GetEnemyByIdAsync(int enemyId)
+        public async Task<Enemy> GetEnemyByIdAsync(int enemyId, int gameId)
         {
-            throw new NotImplementedException();
+            return await _context.Enemies
+                .Where(e => e.GameId == gameId && e.Id == enemyId)
+                .FirstOrDefaultAsync();
+               
         }
     }
 }
