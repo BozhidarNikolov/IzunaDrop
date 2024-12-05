@@ -30,7 +30,7 @@
                     <a asp-controller="Character" asp-action="Index">Characters</a>
                 </div>
                 <div class="text-center">
-                    <a asp-controller="Enemy" asp-action="Index">Enemies</a>
+                    <a asp-controller="Enemy" asp-action="Index" asp-route-gameId="@Model.Id">Enemies</a>
                 </div>
                 <div class="text-center">
                     <a asp-controller="Item" asp-action="Index">Items</a>
