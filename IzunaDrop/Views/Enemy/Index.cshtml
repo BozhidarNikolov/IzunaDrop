@@ -3,3 +3,13 @@
 *@
 @{
 }
+@model IEnumerable<IzunaDrop.Data.Models.Enemy>
+
+<ul>
+    @foreach (var enemy in Model)
+    {
+        <div>
+            @enemy.Name
+        </div>
+    }
+</ul>
