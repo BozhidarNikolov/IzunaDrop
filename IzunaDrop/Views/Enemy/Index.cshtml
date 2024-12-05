@@ -6,10 +6,20 @@
 @model IEnumerable<IzunaDrop.Data.Models.Enemy>
 
 <ul>
-    @foreach (var enemy in Model)
+    
+    @if (Model.Count()==0)
     {
         <div>
-            @enemy.Name
+            No enemies yet
         </div>
+    }
+    else
+    {
+        @foreach (var enemy in Model)
+        {
+            <div>
+                @enemy.Name
+            </div>
+        }
     }
 </ul>
