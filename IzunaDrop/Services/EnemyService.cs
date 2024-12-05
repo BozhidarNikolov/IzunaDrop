@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace IzunaDrop.Services
 {
-    public class EnemyService:IEnemyService
+    public class EnemyService : IEnemyService
     {
         private readonly IzunaDropDbContext _context;
         public EnemyService(IzunaDropDbContext context)
@@ -18,6 +18,11 @@ namespace IzunaDrop.Services
             return await _context.Enemies
                 .Where(e => e.GameId == gameId)
                 .ToListAsync();
+        }
+
+        public Task<Enemy> GetEnemyByIdAsync(int enemyId)
+        {
+            throw new NotImplementedException();
         }
     }
 }
