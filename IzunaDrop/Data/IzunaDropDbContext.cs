@@ -28,7 +28,7 @@ public class IzunaDropDbContext : IdentityDbContext<IzunaDropUser>
                 Name = "TestGame:The testing",
                 Description = "An action-packed adventure game.",
                 ReleaseDate = new DateTime(2006, 2, 23),
-                ImagePath= "/images/bigstock-test-icon-63758263-4108836978.jpg"
+                ImagePath= "/images/bigstock-test-icon-63758263-4108836978.jpg",
             }
             );
         builder.Entity<Game>()
@@ -41,6 +41,31 @@ public class IzunaDropDbContext : IdentityDbContext<IzunaDropUser>
                 ReleaseDate = new DateTime(2012, 12, 12),
                 ImagePath = "/images/2115068-box_ng3.jpg"
             }
+            );
+        builder.Entity<Enemy>()
+            .HasData(
+            new Enemy
+            {
+                Id = 1,
+                Name="Ninja",
+                Description="A ninja from a Ninja Game",
+                GameId=2
+            },
+            new Enemy
+            {
+                Id = 2,
+                Name = "Orc",
+                Description = "A strong, brutish foe that loves combat.",
+                GameId = 1 // Also belongs to the first game
+            },
+            new Enemy
+            {
+                Id = 3,
+                Name = "Ninja #2",
+                Description = "A ninja from a Ninja Game 2",
+                GameId = 2
+            }
+
             );
     }
 }
