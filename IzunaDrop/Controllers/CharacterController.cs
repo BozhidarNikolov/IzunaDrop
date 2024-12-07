@@ -13,9 +13,10 @@ namespace IzunaDrop.Controllers
             _characterService = characterService;
             _logger = logger;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int gameId)
         {
-            return View();
+           var characters= await _characterService.GetAllCharactersAsync(gameId);
+            return View(characters);
         }
     }
 }
