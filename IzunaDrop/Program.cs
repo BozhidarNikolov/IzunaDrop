@@ -19,6 +19,7 @@ builder.Services.AddIdentity<IzunaDropUser,IdentityRole>(options => options.Sign
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IGameService, GameService>();
 builder.Services.AddScoped<IEnemyService, EnemyService>();
+builder.Services.AddScoped<ICharacterService, CharacterService>();
 
 
 
