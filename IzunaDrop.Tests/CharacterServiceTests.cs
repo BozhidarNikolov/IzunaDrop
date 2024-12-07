@@ -40,6 +40,16 @@ namespace IzunaDrop.Tests
             _characterService = new CharacterService(_context);
 
         }
-        
+        [Fact]
+
+        public async Task GetAllCharactersAsync_ShouldReturnAllCharacters()
+        {
+            InitializeDatabase();
+            int gameId = 2;
+            var result = await _characterService.GetAllCharactersAsync(gameId);
+
+            Assert.NotNull(result);
+            Assert.Equal(2, result.Count());
+        }
     }
 }
