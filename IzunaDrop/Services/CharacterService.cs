@@ -1,6 +1,7 @@
 ﻿using IzunaDrop.Data;
 using IzunaDrop.Data.Models;
 using IzunaDrop.Services.Interface;
+using Microsoft.EntityFrameworkCore;
 
 namespace IzunaDrop.Services
 {
@@ -13,9 +14,11 @@ namespace IzunaDrop.Services
             _context = context;
         }
 
-        public Task<IEnumerable<Character>> GetAllCharactersAsync(int gameId)
+        public async Task<IEnumerable<Character>> GetAllCharactersAsync(int gameId)
         {
-            throw new NotImplementedException();
+            return await _context.Characters
+                .Where(c => c.GameId == gameId)
+                .ToListAsync();
         }
     }
 }
