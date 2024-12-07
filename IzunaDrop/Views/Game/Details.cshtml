@@ -27,7 +27,7 @@
             <div class="box">
                 <h3>Explore</h3>
                 <div class="text-center">
-                    <a asp-controller="Character" asp-action="Index">Characters</a>
+                    <a asp-controller="Character" asp-action="Index" asp-route-gameId="@Model.Id">Characters</a>
                 </div>
                 <div class="text-center">
                     <a asp-controller="Enemy" asp-action="Index" asp-route-gameId="@Model.Id">Enemies</a>
