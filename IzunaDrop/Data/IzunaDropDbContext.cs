@@ -67,5 +67,36 @@ public class IzunaDropDbContext : IdentityDbContext<IzunaDropUser>
             }
 
             );
+        builder.Entity<Character>()
+            .HasData(
+            new Character
+            {
+                Id = 1,
+                Name = "TestCharacters 1",
+                Description = "Test Description blalalalaal",
+                GameId = 1
+            },
+            new Character
+            {
+                Id = 2,
+                Name = "TestCharacters 2",
+                Description = "Test Description blalalalaal",
+                GameId = 2
+            },
+            new Character
+            {
+                Id = 3,
+                Name = "TestCharacters 3",
+                Description = "Test Description blalalalaal",
+                GameId = 2
+            },
+            new Character
+            {
+                Id = 4,
+                Name = "TestCharacters 4",
+                Description = "Test Description blalalalaal",
+                GameId = 2
+            }
+            );
     }
 }
