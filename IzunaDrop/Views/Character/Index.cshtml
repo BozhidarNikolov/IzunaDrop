@@ -17,7 +17,7 @@
         @foreach (var character in Model)
         {
             <div>
-                <a asp-controller="Item" asp-action="Details" asp-route-gameId="@character.GameId" asp-route-characterId="@character.Id">
+                <a asp-controller="Character" asp-action="Details" asp-route-gameId="@character.GameId" asp-route-characterId="@character.Id">
                     @character.Name
                 </a>
 
