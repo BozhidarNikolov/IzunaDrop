@@ -20,9 +20,11 @@ namespace IzunaDrop.Services
                 .ToListAsync();
         }
 
-        public Task<Item> GetItemByIdAsync(int gameId, int itemId)
+        public async Task<Item> GetItemByIdAsync(int gameId, int itemId)
         {
-            throw new NotImplementedException();
+            return await _context.Items
+                .Where(i => i.GameId == gameId && i.Id == itemId)
+                .FirstOrDefaultAsync();
         }
     }
 }
