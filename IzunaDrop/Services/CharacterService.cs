@@ -20,6 +20,11 @@ namespace IzunaDrop.Services
                 .Where(c => c.GameId == gameId)
                 .ToListAsync();
         }
-        
+        public async Task<Character> GetCharacterByIdAsync(int gameId,int characterId)
+        {
+            return await _context.Characters
+                .Where(c => c.GameId == gameId && c.Id == characterId)
+                .FirstOrDefaultAsync();
+        }
     }
 }
