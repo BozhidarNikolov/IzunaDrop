@@ -21,8 +21,8 @@ namespace IzunaDrop.Tests
             _context.Database.EnsureDeleted();
             _context.Games.AddRange(new List<Game>
             {
-                new Game {Id=1, Name="Game 1", Description="Test game 1", ReleaseDate=new DateTime(2012,12,12)},
-                new Game {Id=2, Name="Game 2", Description="Test game 2",ReleaseDate=new DateTime(2010,10,10)}
+                new Game {Id=5, Name="Game 1", Description="Test game 1", ReleaseDate=new DateTime(2012,12,12)},
+                new Game {Id=6, Name="Game 2", Description="Test game 2",ReleaseDate=new DateTime(2010,10,10)}
             });
             _context.SaveChanges();
 
@@ -42,7 +42,7 @@ namespace IzunaDrop.Tests
         public async Task GetGameByIdAsync_ShouldReturnGame()
         {
             InitializeDatabase();
-            int testGameId = 1;
+            int testGameId = 5;
             var result = await _gameService.GetGameByIdAsync(testGameId);
 
             Assert.NotNull(result);

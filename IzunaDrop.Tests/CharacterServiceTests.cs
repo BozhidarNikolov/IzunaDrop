@@ -25,8 +25,8 @@ namespace IzunaDrop.Tests
             _context.Database.EnsureDeleted();
             _context.Games.AddRange(new List<Game>
             {
-                new Game {Id=1, Name="Game 1", Description="Test game 1", ReleaseDate=new DateTime(2012,12,12)},
-                new Game {Id=2, Name="Game 2", Description="Test game 2",ReleaseDate=new DateTime(2010,10,10)}
+                new Game {Id=1, Name="Ninja Gaiden", Description="Test game 1", ReleaseDate=new DateTime(2012,12,12)},
+                new Game {Id=2, Name="Dark Souls", Description="Test game 2",ReleaseDate=new DateTime(2010,10,10)}
             });
             _context.Characters.AddRange(new List<Character>
             {
@@ -62,6 +62,16 @@ namespace IzunaDrop.Tests
             Assert.NotNull(result);
             Assert.Equal("Character 2", result.Name);
             Assert.Equal(gameId, result.GameId);
+        }
+        [Fact]
+        public async Task GetCharacterByIdAsync_ShouldReturnNull()
+        {
+            InitializeDatabase();
+            int gameId = 2;
+            int characterId = 99; //Id that doesnt exist
+            var result = await _characterService.GetCharacterByIdAsync(gameId, characterId);
+
+            Assert.Null(result);
         }
     }
 }
