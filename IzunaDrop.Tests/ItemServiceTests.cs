@@ -30,12 +30,23 @@ namespace IzunaDrop.Tests
             });
             _context.Items.AddRange(new List<Item>
             {
-                new Item{Id=1,Name="Item 1",Description="Test item 1"},
-                new Item{Id=2,Name="Item 2",Description="Test item 2"}
+                new Item{Id=1,Name="Item 1",Description="Test item 1",GameId=7},
+                new Item{Id=2,Name="Item 2",Description="Test item 2",GameId=7}
             });
             _context.SaveChanges();
 
             _itemService = new ItemService(_context);
+        }
+
+        [Fact]
+        public async Task GetAllItemsAsync_ShouldReturnAllItems()
+        {
+            InitializeDatabase();
+            int gameId = 7;
+            var result =await _itemService.GetAllItemsAsync(gameId);
+            Assert.NotNull(result);
+            Assert.Equal(2, result.Count());
+
         }
     }
 }
