@@ -15,7 +15,7 @@ namespace IzunaDrop.Controllers
         }
         public async Task<IActionResult> Index(int gameId)
         {
-            var items = _itemService.GetAllItemsAsync(gameId);
+            var items = await _itemService.GetAllItemsAsync(gameId);
             return View(items);
         }
     }
