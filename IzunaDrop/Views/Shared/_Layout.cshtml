@@ -24,6 +24,9 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                     </ul>
+                    <div class="navbar-nav">
+                        @await Html.PartialAsync("_LoginPartial")
+                    </div>
                 </div>
             </div>
         </nav>
