@@ -19,7 +19,7 @@ namespace IzunaDrop.Tests
         private void InitializeDatabase()
         {
             var options = new DbContextOptionsBuilder<IzunaDropDbContext>()
-                .UseInMemoryDatabase(databaseName: "TestDatabase")
+                .UseInMemoryDatabase(databaseName: "ItemTestDatabase")
                 .Options;
             _context = new IzunaDropDbContext(options);
             _context.Database.EnsureDeleted();
@@ -48,5 +48,18 @@ namespace IzunaDrop.Tests
             Assert.Equal(2, result.Count());
 
         }
+        [Fact]
+        public async Task GetItemByIdAsync_ShouldReturnItem()
+        {
+            InitializeDatabase();
+            int gameId = 7;
+            int itemId = 2;
+            var result = await _itemService.GetItemByIdAsync(gameId, itemId);
+
+            Assert.NotNull(result);
+            Assert.Equal(itemId, result.Id);
+            Assert.Equal("Item 2", result.Name);
+        }
+        
     }
 }

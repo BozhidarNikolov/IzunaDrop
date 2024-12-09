@@ -19,7 +19,7 @@ namespace IzunaDrop.Tests
         private void InitializeDatabase()
         {
             var options = new DbContextOptionsBuilder<IzunaDropDbContext>()
-                .UseInMemoryDatabase(databaseName: "TestDatabase")
+                .UseInMemoryDatabase(databaseName: "CharacterTestDatabase")
                 .Options;
             _context = new IzunaDropDbContext(options);
             _context.Database.EnsureDeleted();
