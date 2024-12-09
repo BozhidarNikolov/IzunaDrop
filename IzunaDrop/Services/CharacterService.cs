@@ -20,5 +20,6 @@ namespace IzunaDrop.Services
                 .Where(c => c.GameId == gameId)
                 .ToListAsync();
         }
+        
     }
 }
