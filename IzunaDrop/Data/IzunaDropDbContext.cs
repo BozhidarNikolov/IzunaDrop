@@ -98,5 +98,37 @@ public class IzunaDropDbContext : IdentityDbContext<IzunaDropUser>
                 GameId = 2
             }
             );
+        builder.Entity<Item>()
+            .HasData(
+            new Item
+            {
+                Id=1,
+                Name="TestItem 1",
+                Description="Test Item description blalalalalala",
+                GameId=1
+            },
+            new Item
+            {
+                Id = 2,
+                Name = "TestItem 2",
+                Description = "Test Item description blalalalalala",
+                GameId = 2
+            },
+            new Item
+            {
+                Id = 3,
+                Name = "TestItem 3",
+                Description = "Test Item description blalalalalala",
+                GameId = 2
+            },
+            new Item
+            {
+                Id = 4,
+                Name = "TestItem 4",
+                Description = "Test Item description blalalalalala",
+                GameId = 2
+            }
+            );
+
     }
 }
