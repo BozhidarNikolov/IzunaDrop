@@ -5,6 +5,7 @@ using IzunaDrop.Data.Models;
 using IzunaDrop.Data.Seeders;
 using IzunaDrop.Services.Interface;
 using IzunaDrop.Services;
+using Microsoft.AspNetCore.Identity.UI.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("IzunaDropDbContextConnection") ?? throw new InvalidOperationException("Connection string 'IzunaDropDbContextConnection' not found.");
@@ -18,6 +19,7 @@ builder.Services.AddRazorPages();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<IEmailSender, DummyEmailSender>();
 builder.Services.AddScoped<IGameService, GameService>();
 builder.Services.AddScoped<IEnemyService, EnemyService>();
 builder.Services.AddScoped<ICharacterService, CharacterService>();
