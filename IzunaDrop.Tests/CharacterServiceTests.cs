@@ -51,5 +51,17 @@ namespace IzunaDrop.Tests
             Assert.NotNull(result);
             Assert.Equal(2, result.Count());
         }
+        [Fact]
+        public async Task GetCharacterByIdAsync_ShouldReturnCharacter()
+        {
+            InitializeDatabase();
+            int gameId = 2;
+            int characterId = 2;
+            var result = await _characterService.GetCharacterByIdAsync(gameId, characterId);
+
+            Assert.NotNull(result);
+            Assert.Equal("Character 2", result.Name);
+            Assert.Equal(gameId, result.GameId);
+        }
     }
 }
