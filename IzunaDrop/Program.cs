@@ -11,9 +11,10 @@ var connectionString = builder.Configuration.GetConnectionString("IzunaDropDbCon
 
 builder.Services.AddDbContext<IzunaDropDbContext>(options => options.UseSqlServer(connectionString));
 
-builder.Services.AddIdentity<IzunaDropUser,IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddIdentity<IzunaDropUser,IdentityRole>(options => options.SignIn.RequireConfirmedAccount =false)
     .AddEntityFrameworkStores<IzunaDropDbContext>()
     .AddDefaultTokenProviders();
+builder.Services.AddRazorPages();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -58,9 +59,12 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseAuthentication();
 
+app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
 app.Run();
