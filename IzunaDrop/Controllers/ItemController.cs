@@ -13,10 +13,10 @@ namespace IzunaDrop.Controllers
             _itemService = itemService;
             _logger = logger;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index(int gameId)
         {
-            
-            return View();
+            var items = _itemService.GetAllItemsAsync(gameId);
+            return View(items);
         }
     }
 }
