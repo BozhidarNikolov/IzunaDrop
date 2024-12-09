@@ -18,9 +18,9 @@ namespace IzunaDrop.Controllers
            var characters= await _characterService.GetAllCharactersAsync(gameId);
             return View(characters);
         }
-        public async Task<IActionResult> Details(int gameId,int itemId)
+        public async Task<IActionResult> Details(int gameId,int characterId)
         {
-            var character = await _characterService.GetCharacterByIdAsync(gameId, itemId);
+            var character = await _characterService.GetCharacterByIdAsync(gameId, characterId);
             return View(character);
         }
     }
