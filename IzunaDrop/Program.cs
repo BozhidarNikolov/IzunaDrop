@@ -20,6 +20,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IGameService, GameService>();
 builder.Services.AddScoped<IEnemyService, EnemyService>();
 builder.Services.AddScoped<ICharacterService, CharacterService>();
+builder.Services.AddScoped<IItemService, ItemService>();
 
 
 
