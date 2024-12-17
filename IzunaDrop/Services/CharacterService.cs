@@ -33,5 +33,22 @@ namespace IzunaDrop.Services
             await _context.SaveChangesAsync();
             return character;
         }
+
+        public async Task<bool> UpdateCharacterAsync(Character updatedCharacter)
+        {
+            var existingCharacter = await _context.Characters.FindAsync(updatedCharacter.Id);
+            if (existingCharacter == null)
+            {
+                return false;
+            }
+
+            existingCharacter.Name = updatedCharacter.Name;
+            existingCharacter.Description = updatedCharacter.Description;
+            existingCharacter.GameId = updatedCharacter.GameId;
+
+            _context.Characters.Update(existingCharacter);
+            await _context.SaveChangesAsync();
+            return true;
+        }
     }
 }
