@@ -20,7 +20,8 @@ namespace IzunaDrop.Data.Models
         [MaxLength(ItemConstants.DescriptionMaxLength)]
         public string Description { get; set; } = string.Empty;
 
-
+        [Required]
+        public bool IsDeleted { get; set; } = false;
         public string? ImagePath { get; set; }
 
         [ForeignKey(nameof(GameId))]
