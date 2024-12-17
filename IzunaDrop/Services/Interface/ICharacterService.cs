@@ -8,6 +8,8 @@ namespace IzunaDrop.Services.Interface
         Task<Character> GetCharacterByIdAsync(int gameId, int characterId);
 
         Task<Character> CreateCharacterAsync(Character character);
+
+        Task<Character> UpdateCharacterAsync(Character updatedCharacter);
     }
     
 }
