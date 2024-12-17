@@ -50,6 +50,17 @@ namespace IzunaDrop.Services
             await _context.SaveChangesAsync();
             return true;
         }
-        
+        public async Task<bool> DeleteCharacterAsync(int characterId)
+        {
+            var character = await _context.Characters.FindAsync(characterId);
+            if (character == null)
+            {
+                return false;
+            }
+            character.IsDeleted = true;
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
     }
 }
