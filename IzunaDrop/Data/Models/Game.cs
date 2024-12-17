@@ -20,7 +20,7 @@ namespace IzunaDrop.Data.Models
         [MaxLength(GameConstants.DescriptionMaxLength)]
         [MinLength(GameConstants.DescriptionMinLength)]
         public string Description { get; set; } = string.Empty;
-        [Required]
+        
         public bool IsDeleted { get; set; } = false;
 
         [Required]

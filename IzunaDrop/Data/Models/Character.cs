@@ -23,7 +23,7 @@ namespace IzunaDrop.Data.Models
 
         public string? ImagePath { get; set; }
 
-        [Required]
+       
         public bool IsDeleted { get; set; } = false;
 
         [ForeignKey(nameof(GameId))]

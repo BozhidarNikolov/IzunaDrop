@@ -19,7 +19,7 @@ namespace IzunaDrop.Data.Models
         [MinLength(EnemyConstants.DescriptionMinLength)]
         [MaxLength(EnemyConstants.DescriptionMaxLength)]
         public string Description { get; set; } = string.Empty;
-        [Required]
+        
         public bool IsDeleted { get; set; } = false;
 
         public string? ImagePath { get; set; }
