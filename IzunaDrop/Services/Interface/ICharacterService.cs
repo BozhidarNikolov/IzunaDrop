@@ -6,6 +6,8 @@ namespace IzunaDrop.Services.Interface
     {
         Task<IEnumerable<Character>> GetAllCharactersAsync(int gameId);
         Task<Character> GetCharacterByIdAsync(int gameId, int characterId);
+
+        Task<Character> CreateCharacterAsync(Character character);
     }
     
 }

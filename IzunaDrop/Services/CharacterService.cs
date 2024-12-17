@@ -26,5 +26,12 @@ namespace IzunaDrop.Services
                 .Where(c => c.GameId == gameId && c.Id == characterId)
                 .FirstOrDefaultAsync();
         }
+        public async Task<Character> CreateCharacterAsync(Character character)
+        {
+            
+            _context.Characters.Add(character);
+            await _context.SaveChangesAsync();
+            return character;
+        }
     }
 }
