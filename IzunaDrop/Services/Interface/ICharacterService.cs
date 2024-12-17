@@ -10,6 +10,8 @@ namespace IzunaDrop.Services.Interface
         Task<Character> CreateCharacterAsync(Character character);
 
         Task<bool> UpdateCharacterAsync(Character updatedCharacter);
+
+        Task<bool> DeleteCharacterAsync(int characterId);
     }
     
 }
