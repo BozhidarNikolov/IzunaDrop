@@ -9,7 +9,7 @@ namespace IzunaDrop.Services.Interface
 
         Task<Character> CreateCharacterAsync(Character character);
 
-        Task<Character> UpdateCharacterAsync(Character updatedCharacter);
+        Task<bool> UpdateCharacterAsync(Character updatedCharacter);
     }
     
 }
