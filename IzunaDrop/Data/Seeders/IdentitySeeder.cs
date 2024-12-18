@@ -34,7 +34,7 @@ namespace IzunaDrop.Data.Seeders
             {
                 adminUser = new IzunaDropUser
                 {
-                    UserName = "admin",
+                    UserName = adminEmail,
                     Email = adminEmail,
                     EmailConfirmed = true
                 };
