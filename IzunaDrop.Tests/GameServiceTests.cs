@@ -66,5 +66,110 @@ namespace IzunaDrop.Tests
             
             Assert.Null(result); 
         }
+        [Fact]
+        public async Task CreateGameAsync_ShouldAddNewGame()
+        {
+            InitializeDatabase();
+            var game = new Game
+            {
+                Name = "Test Game",
+                Description = "A test description",
+                IsDeleted = false,
+                ReleaseDate = new DateTime(2006, 2, 23)
+            };
+
+            var result = await _gameService.CreateGameAsync(game);
+
+
+            Assert.NotNull(result);
+            Assert.NotEqual(0, result.Id);
+            var createdGame = await _context.Games.FindAsync(result.Id);
+            Assert.NotNull(createdGame);
+            Assert.Equal("Test Game", createdGame.Name);
+            Assert.Equal("A test description", createdGame.Description);
+            Assert.False(createdGame.IsDeleted);
+        }
+
+        [Fact]
+        public async Task UpdateGameAsync_ShouldReturnFalseIfNotFound()
+        {
+            InitializeDatabase();
+            var updatedGame = new Game
+            {
+                Id = 999,
+                Name = "DoesNotExist",
+                Description = "No desc",
+                
+            };
+
+            var result = await _gameService.UpdateGameAsync(updatedGame);
+            Assert.False(result);
+        }
+
+        [Fact]
+        public async Task UpdateGameAsync_ShouldUpdateExistingGame()
+        {
+            InitializeDatabase();
+            var game = new Game
+            {
+                Name = "Old Name",
+                Description = "Old Description",
+                ReleaseDate= new DateTime(2006, 2, 23)
+
+            };
+            _context.Games.Add(game);
+            await _context.SaveChangesAsync();
+
+            var updatedGame = new Game
+            {
+                Id = game.Id,
+                Name = "New Name",
+                Description = "New Description",
+                ReleaseDate = new DateTime(2006, 2, 23)
+
+            };
+
+            var result = await _gameService.UpdateGameAsync(updatedGame);
+            Assert.True(result);
+
+            var fromDb = await _context.Games.FindAsync(game.Id);
+            Assert.Equal("New Name", fromDb.Name);
+            Assert.Equal("New Description", fromDb.Description);
+            Assert.Equal(new DateTime(2006, 2, 23), fromDb.ReleaseDate);
+
+
+        }
+
+        [Fact]
+        public async Task DeleteGameAsync_ShouldReturnFalseIfNotFound()
+        {
+            InitializeDatabase();
+
+            var result = await _gameService.DeleteGameAsync(999);
+            Assert.False(result);
+        }
+
+        [Fact]
+        public async Task DeleteGameAsync_ShouldSetIsDeletedToTrue()
+        {
+            InitializeDatabase();
+            var game = new Game
+            {
+                Name = "Game to Delete",
+                Description = "Delete me",
+                IsDeleted = false,
+                ReleaseDate= new DateTime(2006, 2, 23)
+            };
+
+            _context.Games.Add(game);
+            await _context.SaveChangesAsync();
+
+            var result = await _gameService.DeleteGameAsync(game.Id);
+
+            Assert.True(result);
+            var fromDb = await _context.Games.FindAsync(game.Id);
+            Assert.NotNull(fromDb);
+            Assert.True(fromDb.IsDeleted);
+        }
     }
 }
