@@ -70,5 +70,106 @@ namespace IzunaDrop.Tests
 
             Assert.Null(result);
         }
+        [Fact]
+        public async Task CreateEnemyAsync_ShouldAddNewEnemy()
+        {
+            InitializeDatabase();
+            var enemy = new Enemy
+            {
+                Name = "Test Enemy",
+                Description = "A test description",
+                GameId = 1,
+                IsDeleted = false
+            };
+
+            var result = await _enemyService.CreateEnemyAsync(enemy);
+
+
+            Assert.NotNull(result);
+            Assert.NotEqual(0, result.Id);
+            var createdEnemy = await _context.Enemies.FindAsync(result.Id);
+            Assert.NotNull(createdEnemy);
+            Assert.Equal("Test Character", createdEnemy.Name);
+            Assert.Equal("A test description", createdEnemy.Description);
+            Assert.False(createdEnemy.IsDeleted);
+        }
+
+        [Fact]
+        public async Task UpdateEnemyAsync_ShouldReturnFalseIfNotFound()
+        {
+            InitializeDatabase();
+            var updatedEnemy = new Enemy
+            {
+                Id = 999,
+                Name = "DoesNotExist",
+                Description = "No desc",
+                GameId = 1
+            };
+
+            var result = await _enemyService.UpdateEnemyAsync(updatedEnemy);
+            Assert.False(result);
+        }
+
+        [Fact]
+        public async Task UpdateEnemyAsync_ShouldUpdateExistingEnemy()
+        {
+            InitializeDatabase();
+            var enemy = new Enemy
+            {
+                Name = "Old Name",
+                Description = "Old Description",
+                GameId = 1
+            };
+            _context.Enemies.Add(enemy);
+            await _context.SaveChangesAsync();
+
+            var updatedEnemy = new Enemy
+            {
+                Id = enemy.Id,
+                Name = "New Name",
+                Description = "New Description",
+                GameId = 2
+            };
+
+            var result = await _enemyService.UpdateEnemyAsync(updatedEnemy);
+            Assert.True(result);
+
+            var fromDb = await _context.Enemies.FindAsync(enemy.Id);
+            Assert.Equal("New Name", fromDb.Name);
+            Assert.Equal("New Description", fromDb.Description);
+            Assert.Equal(2, fromDb.GameId);
+        }
+
+        [Fact]
+        public async Task DeleteEnemyAsync_ShouldReturnFalseIfNotFound()
+        {
+            InitializeDatabase();
+
+            var result = await _enemyService.DeleteEnemyAsync(999);
+            Assert.False(result);
+        }
+
+        [Fact]
+        public async Task DeleteEnemyAsync_ShouldSetIsDeletedToTrue()
+        {
+            InitializeDatabase();
+            var enemy = new Enemy
+            {
+                Name = "Enemy to Delete",
+                Description = "Delete me",
+                GameId = 1,
+                IsDeleted = false
+            };
+
+            _context.Enemies.Add(enemy);
+            await _context.SaveChangesAsync();
+
+            var result = await _enemyService.DeleteEnemyAsync(enemy.Id);
+
+            Assert.True(result);
+            var fromDb = await _context.Enemies.FindAsync(enemy.Id);
+            Assert.NotNull(fromDb);
+            Assert.True(fromDb.IsDeleted);
+        }
     }
 }
