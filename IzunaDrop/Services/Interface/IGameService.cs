@@ -8,5 +8,11 @@ namespace IzunaDrop.Services.Interface
     {
         Task<IEnumerable<Game>> GetAllGamesAsync();
         Task<Game> GetGameByIdAsync(int id);
+
+        Task<Enemy> CreateGameAsync(Game game);
+
+        Task<bool> UpdateGameAsync(Game game);
+
+        Task<bool> DeleteGameAsync(int gameId);
     }
 }
