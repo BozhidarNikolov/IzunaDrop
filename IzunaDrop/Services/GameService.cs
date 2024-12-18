@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace IzunaDrop.Services
 {
-    public class GameService:IGameService
+    public class GameService : IGameService
     {
         private readonly IzunaDropDbContext _context;
 
