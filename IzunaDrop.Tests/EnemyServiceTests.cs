@@ -89,7 +89,7 @@ namespace IzunaDrop.Tests
             Assert.NotEqual(0, result.Id);
             var createdEnemy = await _context.Enemies.FindAsync(result.Id);
             Assert.NotNull(createdEnemy);
-            Assert.Equal("Test Character", createdEnemy.Name);
+            Assert.Equal("Test Enemy", createdEnemy.Name);
             Assert.Equal("A test description", createdEnemy.Description);
             Assert.False(createdEnemy.IsDeleted);
         }
