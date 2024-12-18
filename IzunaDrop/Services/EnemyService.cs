@@ -58,6 +58,7 @@ namespace IzunaDrop.Services
             existingEnemy.Name = updatedEnemy.Name;
             existingEnemy.Description = updatedEnemy.Description;
             existingEnemy.GameId = updatedEnemy.GameId;
+            existingEnemy.ImagePath = updatedEnemy.ImagePath;
 
             _context.Enemies.Update(existingEnemy);
             await _context.SaveChangesAsync();
