@@ -22,10 +22,11 @@ namespace IzunaDrop.Controllers
 
         public async Task<IActionResult> Index(string searchTerm)
         {
+            
             var games = await _gameService.GetAllGamesAsync();
             if (!string.IsNullOrEmpty(searchTerm))
             {
-                games = games.Where(g => g.Name.Contains(searchTerm));
+                games = games.Where(g => g.Name.Contains(searchTerm,StringComparison.OrdinalIgnoreCase));
             }
             return View(games);
         }
