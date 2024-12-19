@@ -5,10 +5,17 @@
 }
 
 <div class="text-center">
-    <form asp-action="Index" method="get" class="mb-3">
-        <input type="text" name="searchTerm" class="form-control d-inline-block w-25" placeholder="Search games..." />
+
+    <div class="d-flex justify-content-center align-items-center mb-3">
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        <a asp-controller="Game" asp-action="Add" class="btn btn-success me-3">Add Game</a>
+    }
+        <form asp-action="Index" method="get" class="d-flex" style="max-width: 400px;">
+            <input type="text" name="searchTerm" class="form-control me-2" placeholder="Search games..." />
         <button type="submit" class="btn btn-primary">Search</button>
     </form>
+    </div>
     <div class="row">
         @foreach (var game in Model)
         {
