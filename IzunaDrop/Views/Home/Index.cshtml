@@ -5,6 +5,10 @@
 }
 
 <div class="text-center">
+    <form asp-action="Index" method="get" class="mb-3">
+        <input type="text" name="searchTerm" class="form-control d-inline-block w-25" placeholder="Search games..." />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
     <div class="row">
         @foreach (var game in Model)
         {
