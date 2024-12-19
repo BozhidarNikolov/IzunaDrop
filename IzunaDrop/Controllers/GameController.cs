@@ -23,5 +23,9 @@ namespace IzunaDrop.Controllers
             }
             return View(game);
         }
+        public async Task<IActionResult> Add()
+        {
+            return View();
+        }
     }
 }
