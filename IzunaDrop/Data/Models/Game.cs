@@ -31,7 +31,6 @@ namespace IzunaDrop.Data.Models
         public string Developer { get; set; } = string.Empty;
         [Required]
         public string Publisher { get; set; } = string.Empty;
-        public string? ImagePath { get; set; }
 
         public ICollection<Enemy> Enemies { get; set; } = new List<Enemy>();
 

@@ -57,7 +57,6 @@ namespace IzunaDrop.Services
             existingItem.Name = updatedItem.Name;
             existingItem.Description = updatedItem.Description;
             existingItem.GameId = updatedItem.GameId;
-            existingItem.ImagePath = updatedItem.ImagePath;
             _context.Items.Update(existingItem);
             await _context.SaveChangesAsync();
             return true;

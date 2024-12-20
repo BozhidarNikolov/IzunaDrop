@@ -18,7 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\IzunaDrop.ViewModels\IzunaDrop.ViewModels.csproj" />
     <ProjectReference Include="..\IzunaDrop\IzunaDrop.csproj" />
   </ItemGroup>
 

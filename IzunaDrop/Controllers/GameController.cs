@@ -1,4 +1,6 @@
-﻿using IzunaDrop.Services.Interface;
+﻿using IzunaDrop.Data.Models;
+using IzunaDrop.Services.Interface;
+using IzunaDrop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IzunaDrop.Controllers
@@ -23,9 +25,39 @@ namespace IzunaDrop.Controllers
             }
             return View(game);
         }
-        public async Task<IActionResult> Add()
+       
+        [HttpGet]
+        public IActionResult Add()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Add(GameCreateViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                
+                return View(model);
+            }
+            
+
+
+            var newGame = new Game
+            {
+                Name = model.Name,
+                Description = model.Description,
+                Genre = model.Genre,
+                ReleaseDate = model.ReleaseDate,
+                Developer = model.Developer,
+                Publisher = model.Publisher,
+                IsDeleted = false
+            };
+
+            
+            await _gameService.CreateGameAsync(newGame);
+
+            
+            return RedirectToAction("Index", "Home");
         }
     }
 }

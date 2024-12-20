@@ -28,7 +28,6 @@ public class IzunaDropDbContext : IdentityDbContext<IzunaDropUser>
                 Name = "TestGame:The testing",
                 Description = "An action-packed adventure game.",
                 ReleaseDate = new DateTime(2006, 2, 23),
-                ImagePath= "/images/bigstock-test-icon-63758263-4108836978.jpg",
             }
             );
         builder.Entity<Game>()
@@ -39,7 +38,6 @@ public class IzunaDropDbContext : IdentityDbContext<IzunaDropUser>
                 Name = "NG3Test",
                 Description = "Ninja Gaiden 3 balalalalaalalala",
                 ReleaseDate = new DateTime(2012, 12, 12),
-                ImagePath = "/images/2115068-box_ng3.jpg"
             }
             );
         builder.Entity<Enemy>()

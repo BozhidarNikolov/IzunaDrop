@@ -45,7 +45,7 @@ namespace IzunaDrop.Services
             existingCharacter.Name = updatedCharacter.Name;
             existingCharacter.Description = updatedCharacter.Description;
             existingCharacter.GameId = updatedCharacter.GameId;
-            existingCharacter.ImagePath = updatedCharacter.ImagePath;
+            
 
             _context.Characters.Update(existingCharacter);
             await _context.SaveChangesAsync();

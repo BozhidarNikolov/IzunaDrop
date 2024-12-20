@@ -54,7 +54,6 @@ namespace IzunaDrop.Services
             }
             existingGame.Name = updatedGame.Name;
             existingGame.Description = updatedGame.Description;
-            existingGame.ImagePath = updatedGame.ImagePath;
             existingGame.ReleaseDate = updatedGame.ReleaseDate;
 
             _context.Games.Update(existingGame);

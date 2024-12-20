@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IzunaDrop.Constants.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -31,5 +32,7 @@ namespace IzunaDrop.ViewModels
         public string Publisher { get; set; } = string.Empty;
 
         public string? ImagePath { get; set; }
+        public IFormFile? ImageFile { get; set; }
+
     }
 }

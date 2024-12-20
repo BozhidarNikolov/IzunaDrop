@@ -1,4 +1,5 @@
-﻿@*
+﻿@using IzunaDrop.Constants.Enums
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -23,7 +24,12 @@
     </div>
     <div class="mb-3">
         <label asp-for="Genre" class="form-label"></label>
-        <textarea asp-for="Genre" class="form-control"></textarea>
+        <select asp-for="Genre" class="form-control">
+            @foreach (var genreValue in Enum.GetValues(typeof(Genre)))
+            {
+                <option value="@genreValue">@genreValue</option>
+            }
+        </select>
         <span asp-validation-for="Genre" class="text-danger" />
     </div>
     <div class="mb-3">
@@ -41,11 +47,10 @@
         <input asp-for="Publisher" class="form-control" />
         <span asp-validation-for="Publisher" class="text-danger" />
     </div>
-    <div class="mb-3">
-        <label asp-for="ImagePath" class="form-label"></label>
-        <input asp-for="ImagePath" class="form-control" />
-        <span asp-validation-for="ImagePath" class="text-danger" />
-    </div>
 
     <button type="submit" class="btn btn-primary">Add Game</button>
     </form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
