@@ -59,5 +59,16 @@ namespace IzunaDrop.Controllers
             
             return RedirectToAction("Index", "Home");
         }
+        [HttpPost]
+        public async Task<IActionResult> Delete(int gameId)
+        {
+            var game = await _gameService.GetGameByIdAsync(gameId);
+            if (game == null)
+            {
+                return NotFound();
+            }
+            await _gameService.DeleteGameAsync(gameId);
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
