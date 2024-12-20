@@ -41,6 +41,10 @@
             <div>
                 <p>Release Date: @Model.ReleaseDate</p>
                 <p>Genre: @Model.Genre</p>
+
+                <form asp-controller="Game" asp-action="Delete" method="post" asp-route-id="@Model.Id">
+                    <button type="submit" class="btn btn-danger">Remove Game</button>
+                </form>
             </div>
         </div>
         <div class="col-sm-12 col-md-4">
